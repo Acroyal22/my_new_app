@@ -5,13 +5,12 @@ import "./Style.css";
 import moment from "moment";
 import News from "./NewsCard";
 
-
 import Nav from "./Nav";
 
 const Home = () => {
   const [news, setNews] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [setError] = useState(null);
 
   const search = () => {
     axios
@@ -38,22 +37,18 @@ const Home = () => {
     newsData = news.map((mapNews, i) => <News key={i} update={mapNews} />);
   }
   return (
-   
     <div class="container-fluid">
       <div className="head">
-        <header className="header">WALL STREET NEWS</header> 
-        <Nav className="text-center"/>
+        <header className="header">WALL STREET NEWS</header>
+        <Nav className="text-center" />
       </div>
- 
-  
+
       <h2 className="text-center">
         {moment().format("dddd")} {moment().format("LL")}
       </h2>
 
-     
       <section>{newsData}</section>
     </div>
-  
   );
 };
 export default Home;

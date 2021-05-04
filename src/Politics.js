@@ -7,7 +7,7 @@ import Nav from "./Nav";
 const Politics = () => {
   const [news, setNews] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [setError] = useState(null);
 
   const search = () => {
     axios
@@ -34,14 +34,12 @@ const Politics = () => {
     newsData = news.map((mapNews, i) => <News key={i} update={mapNews} />);
   }
   return (
-  
     <div class="container-fluid">
       <div>
         <header className="header">WALL STREET POLITICS NEWS</header>
-        <Nav className="text-center"/>
+        <Nav className="text-center" />
       </div>
 
-     
       <h2 className="text-center">
         {moment().format("dddd")} {moment().format("LL")}
       </h2>

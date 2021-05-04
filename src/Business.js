@@ -7,7 +7,7 @@ import Nav from "./Nav";
 const Business = () => {
   const [news, setNews] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [ setError] = useState(null);
 
   const search = () => {
     axios
