@@ -3,13 +3,13 @@ import React from "react";
 const NewsCard = ({ update }) => {
   let {
     author,
-    name,
     title,
     url,
     description,
-    publishedAt,
+    byline,
     abstract,
     multimedia,
+    updated_date,
   } = update;
 
   return (
@@ -23,14 +23,17 @@ const NewsCard = ({ update }) => {
               src={multimedia[0]["url"]}
             />
           </div>
-          <div className="headline">{title}</div>
+          <div className="headline">TITLE : {title}</div>
           <div>{description}</div>
-          <div>{publishedAt}</div>
-          <div className="content">{abstract}</div>
-          <div>{name}</div>
+
+          <div>ABSTRACT : {abstract}</div>
+
           <div>{author}</div>
 
-          <div>{url}</div>
+          <div>MORE INFO : {url}</div>
+
+          <div>PUBLISHER : {byline}</div>
+          <div>DATE : {updated_date}</div>
         </div>
       </div>
     </div>
