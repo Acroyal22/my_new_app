@@ -13,7 +13,7 @@ const Nav = () => {
           </li>
           <li>
             <Link  to="/business">
-              BUSINESS
+             TECH
             </Link>
           </li>
           <li>
@@ -28,7 +28,7 @@ const Nav = () => {
           </li>
           <li>
             <Link to="/tech">
-              TECH
+              SCIENCE
             </Link>
           </li>
         </ul>

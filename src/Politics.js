@@ -9,29 +9,30 @@ const Politics = () => {
   const [loading, setLoading] = useState(false);
   const [setError] = useState(null);
 
-  const search = () => {
-    axios
-      .get(
-        `https://newsapi.org/v2/everything?q=politics&apiKey=114e9478be6144688e67b8b398132850`
-      )
-      .then((res) => {
-        console.log(news);
-        setNews(res.data.articles);
-        setLoading(true);
-      })
-      .catch((error) => {
-        console.log(error);
-        setError(error);
-      });
-  };
   useEffect(() => {
+    const search = () => {
+      axios
+        .get(
+          "https://api.nytimes.com/svc/topstories/v2/politics.json?api-key=pqbCPdOdZ4DFHC0SROWjiOnNQHqA13Af"
+        )
+        .then((res) => {
+          console.log(news);
+          console.log(res.data.results);
+          setNews(res.data.results);
+          setLoading(true);
+        })
+        .catch((error) => {
+          console.log(error);
+          setError(error);
+        });
+    };
     search();
     // eslint-disable-next-line
   }, []);
   console.log(news);
   let newsData = <h2>We loading your page</h2>;
   if (loading) {
-    newsData = news.map((mapNews, i) => <News key={i} update={mapNews} />);
+    newsData = news.map((mapNews) => <News update={mapNews} />);
   }
   return (
     <div class="container-fluid">
