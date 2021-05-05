@@ -10,7 +10,7 @@ import Nav from "./Nav";
 const Home = () => {
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [ setError] = useState(null);
 
   useEffect(() => {
     const search = () => {
